@@ -18,7 +18,6 @@
 #include <pcl/features/don.h>
 
 using namespace pcl;
-using namespace std;
 
 int
 main (int argc, char *argv[])

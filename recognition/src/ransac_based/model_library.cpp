@@ -42,7 +42,6 @@
 #include <pcl/console/print.h>
 #include <cmath>
 
-using namespace std;
 using namespace pcl;
 using namespace console;
 using namespace pcl::recognition;

@@ -45,7 +45,6 @@
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
 
-using namespace std;
 using namespace pcl;
 
 PointCloud<PointXYZ> cloud, cloud_big;

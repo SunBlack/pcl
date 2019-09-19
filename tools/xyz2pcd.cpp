@@ -39,7 +39,6 @@
 #include <pcl/console/print.h>
 #include <pcl/console/parse.h>
 
-using namespace std;
 using namespace pcl;
 using namespace pcl::io;
 using namespace pcl::console;

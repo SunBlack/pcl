@@ -47,7 +47,6 @@
 #include <pcl/common/time.h>
 
 using namespace pcl;
-using namespace std;
 
 /** \brief if set to value other than 0 -> fine grained output */
 #define DEBUG_OUT 1

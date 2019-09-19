@@ -122,7 +122,6 @@ using ScopeTimeT = pcl::ScopeTime;
 #include <opencv/highgui.h>
 //SIMENDSIMENDSIMENDSIMENDSIMENDSIMENDSIMEND
 
-using namespace std;
 using namespace pcl;
 using namespace pcl::gpu;
 using namespace Eigen;
@@ -132,7 +131,6 @@ namespace pc = pcl::console;
 using namespace pcl::console;
 using namespace pcl::io;
 using namespace pcl::simulation;
-using namespace std;
 uint16_t t_gamma[2048];
 Scene::Ptr scene_;
 Camera::Ptr camera_;

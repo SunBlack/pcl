@@ -62,7 +62,6 @@ namespace pc = pcl::console;
 using namespace pcl::visualization;
 using namespace pcl::gpu;
 using namespace pcl;
-using namespace std;
 
 struct SampledScopeTime : public StopWatch
 {

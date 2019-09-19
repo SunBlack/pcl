@@ -7,8 +7,6 @@
 #include <pcl/search/kdtree.h>
 #include <pcl/search/brute_force.h>
 
-using namespace std;
-
 int
 main (int argc, char ** argv)
 {

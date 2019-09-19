@@ -59,7 +59,6 @@
 using namespace pcl::visualization;
 using namespace pcl::console;
 using namespace pcl::gpu;
-using namespace std;
 
 using PointT = pcl::PointXYZRGBA;
 

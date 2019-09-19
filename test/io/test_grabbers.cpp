@@ -8,8 +8,6 @@
 #include <string>
 #include <thread>
 #include <vector>
-
-using namespace std;
 using namespace std::chrono_literals;
 
 using PointT = pcl::PointXYZRGBA;

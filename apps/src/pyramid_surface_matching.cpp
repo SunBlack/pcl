@@ -7,7 +7,6 @@
 using namespace pcl;
 
 #include <iostream>
-using namespace std;
 
 const Eigen::Vector4f subsampling_leaf_size (0.02f, 0.02f, 0.02f, 0.0f);
 const float normal_estimation_search_radius = 0.05f;

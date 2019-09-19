@@ -47,7 +47,6 @@
 #include <pcl/segmentation/approximate_progressive_morphological_filter.h>
 #include <pcl/segmentation/progressive_morphological_filter.h>
 
-using namespace std;
 using namespace pcl;
 using namespace pcl::io;
 using namespace pcl::console;

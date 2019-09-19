@@ -44,8 +44,6 @@
 #include <pcl/console/time.h>
 #include <pcl/filters/passthrough.h>
 
-
-using namespace std;
 using namespace pcl;
 using namespace pcl::io;
 using namespace pcl::console;

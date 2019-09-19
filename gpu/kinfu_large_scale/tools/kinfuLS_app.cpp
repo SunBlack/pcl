@@ -87,7 +87,6 @@ using ScopeTimeT = pcl::ScopeTime;
 
 #include <pcl/gpu/kinfu_large_scale/screenshot_manager.h>
 
-using namespace std;
 using namespace std::chrono_literals;
 using namespace pcl;
 using namespace Eigen;

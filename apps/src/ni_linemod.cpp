@@ -65,7 +65,6 @@
 #include <thread>
 
 using namespace pcl;
-using namespace std;
 using namespace std::chrono_literals;
 
 using PointT = PointXYZRGBA;

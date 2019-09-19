@@ -47,8 +47,6 @@
 #include <pcl/common/io.h>
 #include <pcl/io/pcd_io.h>
 
-using namespace std;
-
 /* ---[ */
 int
 main (int argc, char** argv)

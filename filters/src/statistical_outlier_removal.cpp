@@ -41,8 +41,6 @@
 #include <pcl/filters/impl/statistical_outlier_removal.hpp>
 #include <pcl/conversions.h>
 
-using namespace std;
-
 ///////////////////////////////////////////////////////////////////////////////////////////
 void
 pcl::StatisticalOutlierRemoval<pcl::PCLPointCloud2>::applyFilter (PCLPointCloud2 &output)

@@ -104,8 +104,6 @@ using namespace pcl::console;
 using namespace pcl::io;
 using namespace pcl::simulation;
 
-using namespace std;
-
 using ColorHandler = pcl::visualization::PointCloudColorHandler<pcl::PCLPointCloud2>;
 using ColorHandlerPtr = ColorHandler::Ptr;
 using ColorHandlerConstPtr = ColorHandler::ConstPtr;

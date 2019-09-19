@@ -19,8 +19,6 @@ The code for the visualization of a plot are usually as simple as the following 
     #include<pcl/visualization/pcl_plotter.h> 
     //...
     
-    using namespace std;
-    
     int 
     main ()
     {

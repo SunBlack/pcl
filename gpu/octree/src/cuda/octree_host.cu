@@ -45,7 +45,6 @@
 
 using namespace pcl::gpu;
 using namespace pcl::device;
-using namespace std;
 
 namespace pcl
 {

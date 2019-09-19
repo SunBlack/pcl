@@ -40,7 +40,6 @@
 #include <pcl/common/random.h>
 #include <pcl/recognition/ransac_based/obj_rec_ransac.h>
 
-using namespace std;
 using namespace pcl::common;
 
 pcl::recognition::ObjRecRANSAC::ObjRecRANSAC (float pair_width, float voxel_size)

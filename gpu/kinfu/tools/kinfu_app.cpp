@@ -83,7 +83,6 @@ using ScopeTimeT = pcl::ScopeTime;
 
 #include "../src/internal.h"
 
-using namespace std;
 using namespace pcl;
 using namespace pcl::gpu;
 using namespace Eigen;

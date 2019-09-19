@@ -29,7 +29,6 @@
 #endif
 
 using namespace pcl;
-using namespace std;
 
 using PointT = pcl::PointXYZRGB;
 using PointNT = pcl::PointNormal;

@@ -53,7 +53,6 @@
   #include <opencv2/gpu/gpu.hpp>
 #endif
 
-using namespace std;
 using namespace pcl::device;
 using namespace pcl::gpu;
 

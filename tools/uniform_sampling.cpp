@@ -46,7 +46,6 @@
 #include <string>
 #include <pcl/io/vtk_io.h>
 
-using namespace std;
 using namespace pcl;
 using namespace pcl::io;
 using namespace pcl::console;

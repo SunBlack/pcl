@@ -243,7 +243,6 @@ pcl::visualization::PCLPlotter::addPlotData (
     char const *filename,
     int type)
 {
-  using namespace std;
   ifstream fin(filename);
   
   //getting the no of column

@@ -47,7 +47,6 @@
 #include <memory>
 #include <thread>
 
-using namespace std;
 using namespace std::chrono_literals;
 using namespace pcl;
 using namespace pcl::console;

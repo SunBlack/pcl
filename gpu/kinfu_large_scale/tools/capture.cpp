@@ -39,7 +39,6 @@
 #include "openni_capture.h"
 #include <pcl/gpu/containers/initialization.h>
 
-using namespace std;
 using namespace pcl;
 using namespace pcl::gpu;
 using namespace xn;

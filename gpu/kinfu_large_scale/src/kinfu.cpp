@@ -54,7 +54,6 @@
   //~ #include <opencv2/gpu/gpu.hpp>
 #endif
 
-using namespace std;
 using namespace pcl::device::kinfuLS;
 
 using pcl::device::kinfuLS::device_cast;

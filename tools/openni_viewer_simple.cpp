@@ -56,8 +56,6 @@
 #include <vector>
 #include <string>
 
-using namespace std;
-
 #define SHOW_FPS 1
 #if SHOW_FPS
 #define FPS_CALC(_WHAT_) \

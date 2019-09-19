@@ -49,7 +49,6 @@
 
 using namespace pcl;
 using namespace pcl::visualization;
-using namespace std;
 using namespace std::chrono_literals;
 
 #define FPS_CALC(_WHAT_) \

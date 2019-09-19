@@ -39,7 +39,6 @@
 #include<iostream>
 
 using namespace pcl::gpu;
-using namespace std;
 
 const float Evaluation::fx = 525.0f;
 const float Evaluation::fy = 525.0f;

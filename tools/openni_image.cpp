@@ -55,7 +55,6 @@
 #include <thread>
 #include <memory>
 
-using namespace std;
 using namespace std::chrono_literals;
 using namespace pcl;
 using namespace pcl::console;

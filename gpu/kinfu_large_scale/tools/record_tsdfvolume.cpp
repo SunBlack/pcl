@@ -52,7 +52,6 @@
 #include "tsdf_volume.h"
 #include "tsdf_volume.hpp"
 
-using namespace std;
 namespace pc = pcl::console;
 
 using PointT = pcl::PointXYZ;

@@ -14,7 +14,6 @@
 #include <pcl/sample_consensus/model_types.h>
 
 using namespace pcl;
-using namespace std;
 using namespace std::chrono_literals;
 
 const Eigen::Vector4f subsampling_leaf_size (0.02f, 0.02f, 0.02f, 0.0f);

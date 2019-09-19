@@ -64,7 +64,6 @@
 #include <pcl/common/time.h>
 
 using namespace pcl::gpu;
-using namespace std;
 
 
 int loadCloud(const std::string& file, pcl::PointCloud<pcl::PointXYZ>& cloud)

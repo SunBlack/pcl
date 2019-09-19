@@ -44,9 +44,6 @@
 #include <algorithm>
 #include "NCV.hpp"
 
-using namespace std;
-
-
 //==============================================================================
 //
 // Error handling helpers

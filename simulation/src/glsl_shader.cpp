@@ -14,7 +14,6 @@ using namespace pcl::simulation::gllib;
 char*
 readTextFile(const char* filename)
 {
-  using namespace std;
   char* buf = nullptr;
   ifstream file;
   file.open(filename, ios::in | ios::binary | ios::ate);

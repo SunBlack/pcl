@@ -64,7 +64,6 @@
 #include <list>
 #include <thread>
 
-using namespace std;
 using namespace std::chrono_literals;
 using namespace pcl;
 using namespace io;

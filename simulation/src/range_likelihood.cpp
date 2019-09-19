@@ -23,8 +23,6 @@ static std::minstd_rand rng(std::random_device{}());
 //#define SIMULATION_DEBUG 1
 #define DO_TIMING_PROFILE 0
 
-using namespace std;
-
 // 301 values, 0.0 uniform  1.0 normal. properly truncated/normalized
 float normal_sigma0x5_normal1x0_range0to3_step0x01[] = {
     1.59576912f, 1.59545000f, 1.59449302f, 1.59289932f, 1.59067083f, 1.58781019f,

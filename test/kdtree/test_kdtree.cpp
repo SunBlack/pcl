@@ -48,8 +48,6 @@
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/xml_parser.hpp>
 
-
-using namespace std;
 using namespace pcl;
 
 boost::property_tree::ptree xml_property_tree;

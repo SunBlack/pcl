@@ -19,7 +19,6 @@
 
 #include <pcl/visualization/pcl_visualizer.h>
 
-using namespace std;
 using namespace pcl;
 using namespace pcl::io;
 using namespace pcl::console;

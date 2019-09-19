@@ -26,7 +26,6 @@ using namespace pcl;
 using namespace pcl::console;
 using namespace pcl::io;
 using namespace pcl::simulation;
-using namespace std;
 
 SimExample::Ptr simexample;
 

@@ -45,7 +45,6 @@
 #include <pcl/console/time.h>
 #include <pcl/filters/morphological_filter.h>
 
-using namespace std;
 using namespace pcl;
 using namespace pcl::io;
 using namespace pcl::console;

@@ -47,7 +47,6 @@
 
 using namespace pcl;
 using namespace pcl::io;
-using namespace std;
 
 struct KeypointT
 {

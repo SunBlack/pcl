@@ -49,8 +49,6 @@
 #include "internal.h"
 #include "cuda_async_copy.h"
 
-using namespace std;
-
 const int MAX_CLUST_SIZE = 25000;
 const float CLUST_TOL = 0.05f;
 

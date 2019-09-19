@@ -63,8 +63,8 @@ namespace pcl
 
         int value = src.ptr (y)[x];
 
-        int tx = min (x - D / 2 + D, src.cols - 1);
-        int ty = min (y - D / 2 + D, src.rows - 1);
+        int tx = std::min(x - D / 2 + D, src.cols - 1);
+        int ty = std::min(y - D / 2 + D, src.rows - 1);
 
         float sum1 = 0;
         float sum2 = 0;
@@ -86,7 +86,7 @@ namespace pcl
         }
 
         int res = __float2int_rn (sum1 / sum2);
-        dst.ptr (y)[x] = max (0, min (res, std::numeric_limits<short>::max ()));
+        dst.ptr (y)[x] = max (0, std::min(res, std::numeric_limits<short>::max ()));
       }
 
       //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -103,8 +103,8 @@ namespace pcl
 
         int center = src.ptr (2 * y)[2 * x];
 
-        int tx = min (2 * x - D / 2 + D, src.cols - 1);
-        int ty = min (2 * y - D / 2 + D, src.rows - 1);
+        int tx = std::min(2 * x - D / 2 + D, src.cols - 1);
+        int ty = std::min(2 * y - D / 2 + D, src.rows - 1);
         int cy = max (0, 2 * y - D / 2);
 
         int sum = 0;

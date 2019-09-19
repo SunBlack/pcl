@@ -263,7 +263,7 @@ namespace pcl
             // Last block
             if (value == total_blocks - 1)
             {
-              output_xyz_count = min ((int)output_xyz.size, global_count);
+              output_xyz_count = std::min((int)output_xyz.size, global_count);
               blocks_done = 0;
               global_count = 0;
             }
@@ -383,7 +383,7 @@ namespace pcl
             // Last block
             if (value == total_blocks - 1)
             {
-              output_xyz_count = min ((int)output_xyz.size, global_count);
+              output_xyz_count = std::min((int)output_xyz.size, global_count);
               blocks_done = 0;
               global_count = 0;
             }

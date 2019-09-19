@@ -162,7 +162,7 @@ namespace pcl
                 const int Wrk = 1;
 
                 float tsdf_new = (tsdf_prev * weight_prev + Wrk * tsdf) / (weight_prev + Wrk);
-                int weight_new = min (weight_prev + Wrk, MAX_WEIGHT);
+                int weight_new = std::min(weight_prev + Wrk, MAX_WEIGHT);
 
                 pack_tsdf (tsdf_new, weight_new, *pos);
               }
@@ -242,7 +242,7 @@ namespace pcl
               const int Wrk = 1;
 
               float tsdf_new = (tsdf_prev * weight_prev + Wrk * tsdf) / (weight_prev + Wrk);
-              int weight_new = min (weight_prev + Wrk, Tsdf::MAX_WEIGHT);
+              int weight_new = std::min(weight_prev + Wrk, Tsdf::MAX_WEIGHT);
 
               pack_tsdf (tsdf_new, weight_new, *pos);
             }
@@ -378,7 +378,7 @@ namespace pcl
             const int Wrk = 1;
 
             float tsdf_new = (tsdf_prev * weight_prev + Wrk * tsdf) / (weight_prev + Wrk);
-            int weight_new = min (weight_prev + Wrk, Tsdf::MAX_WEIGHT);
+            int weight_new = std::min(weight_prev + Wrk, Tsdf::MAX_WEIGHT);
 
             pack_tsdf (tsdf_new, weight_new, *pos);
           }
@@ -498,7 +498,7 @@ namespace pcl
                         const int Wrk = 1;
 
                         float tsdf_new = (tsdf_prev * weight_prev + Wrk * tsdf) / (weight_prev + Wrk);
-                        int weight_new = min (weight_prev + Wrk, Tsdf::MAX_WEIGHT);
+                        int weight_new = std::min(weight_prev + Wrk, Tsdf::MAX_WEIGHT);
 
                         pack_tsdf (tsdf_new, weight_new, *pos);
                     }

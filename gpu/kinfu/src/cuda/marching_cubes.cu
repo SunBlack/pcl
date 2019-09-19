@@ -209,7 +209,7 @@ namespace pcl
           //last block
           if (value == total_blocks - 1)
           {
-            output_count = min (max_size, global_count);
+            output_count = std::min(max_size, global_count);
             blocks_done = 0;
             global_count = 0;
           }
@@ -406,7 +406,7 @@ pcl::device::generateTriangles (const PtrStep<short2>& volume, const DeviceArray
   int blocks_num = divUp (tg.voxels_count, block_size);
 
   dim3 block (block_size);
-  dim3 grid(min(blocks_num, Tg::MAX_GRID_SIZE_X), divUp(blocks_num, Tg::MAX_GRID_SIZE_X));
+  dim3 grid(std::min(blocks_num, Tg::MAX_GRID_SIZE_X), divUp(blocks_num, Tg::MAX_GRID_SIZE_X));
 
   trianglesGeneratorKernel<<<grid, block>>>(tg);
   cudaSafeCall ( cudaGetLastError () );

@@ -66,8 +66,8 @@ namespace pcl
         if (isnan (vmap.ptr (v)[u]))
           return;
 
-        int ty = min (v - ky / 2 + ky, rows - 1);
-        int tx = min (u - kx / 2 + kx, cols - 1);
+        int ty = std::min(v - ky / 2 + ky, rows - 1);
+        int tx = std::min(u - kx / 2 + kx, cols - 1);
 
         float3 centroid = make_float3 (0.f, 0.f, 0.f);
         int counter = 0;

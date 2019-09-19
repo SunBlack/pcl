@@ -192,7 +192,7 @@ namespace pcl
       int v = max (r, max (g, b));
       float h;
 
-      float div_inv = 1.f / (v - min (r, min (g, b)) );
+      float div_inv = 1.f / (v - std::min(r, std::min(g, b)) );
 
       if (v == 0)
           return -1;

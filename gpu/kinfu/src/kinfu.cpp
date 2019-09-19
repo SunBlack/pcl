@@ -566,7 +566,7 @@ namespace pcl
     PCL_EXPORTS void
     mergePointNormal(const DeviceArray<PointXYZ>& cloud, const DeviceArray<Normal>& normals, DeviceArray<PointNormal>& output)
     {
-      const size_t size = min(cloud.size(), normals.size());
+      const size_t size = std::min(cloud.size(), normals.size());
       output.create(size);
 
       const DeviceArray<float4>& c = (const DeviceArray<float4>&)cloud;

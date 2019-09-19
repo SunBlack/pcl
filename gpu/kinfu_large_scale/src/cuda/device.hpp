@@ -55,7 +55,7 @@ namespace pcl
       __device__ __forceinline__ void
       pack_tsdf (float tsdf, int weight, short2& value)
       {
-        int fixedp = max (-DIVISOR, min (DIVISOR, __float2int_rz (tsdf * DIVISOR)));
+        int fixedp = max (-DIVISOR, std::min(DIVISOR, __float2int_rz (tsdf * DIVISOR)));
         //int fixedp = __float2int_rz(tsdf * DIVISOR);
         value = make_short2 (fixedp, weight);
       }

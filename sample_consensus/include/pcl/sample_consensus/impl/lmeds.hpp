@@ -85,7 +85,7 @@ pcl::LeastMedianSquares<PointT>::computeModel (int debug_verbosity_level)
     }
 
     double d_cur_penalty = 0;
-    // d_cur_penalty = sum (min (dist, threshold))
+    // d_cur_penalty = sum (std::min(dist, threshold))
 
     // Iterate through the 3d points and calculate the distances from them to the model
     sac_model_->getDistancesToModel (model_coefficients, distances);

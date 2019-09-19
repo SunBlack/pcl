@@ -280,7 +280,7 @@ namespace pcl
                     }
                     else
                     {                            
-                        length = min(length, length_left);                        
+                        length = std::min(length, length_left);
                         Warp::copy(batch.indices + beg, batch.indices + beg + length, out);
                     }
 
@@ -332,7 +332,7 @@ namespace pcl
                     if (__all_sync(0xFFFFFFFF, idx >= length) || __any_sync(0xFFFFFFFF, out_of_bounds) || total_new == length_left)
                         break;
                 }
-                return min(total_new, length_left);
+                return std::min(total_new, length_left);
             }
         };
 

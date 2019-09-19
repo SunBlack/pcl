@@ -200,8 +200,8 @@ namespace pcl
 					int beta_bin  = std::floor(beta  / beta_bin_size) + image_width;
 					int alpha_bin = std::floor(alpha / bin_size);
 
-					//alpha_bin = min(simage_cols, max(0, alpha_bin));
-					//beta_bin  = min(simage_rows, max(0,  beta_bin));					
+					//alpha_bin = std::min(simage_cols, max(0, alpha_bin));
+					//beta_bin  = std::min(simage_rows, max(0,  beta_bin));
 
 					if (alpha_bin == image_width)  // border points
 					{
@@ -297,7 +297,7 @@ namespace pcl
 			const int smem_size = 2 * Impl::computeFSize(image_width) * sizeof(float);
 
 			dim3 block(Impl::CTA_SIZE);			
-			dim3 grid(min(total, max_grid_dim), divUp(total, max_grid_dim));
+			dim3 grid(std::min(total, max_grid_dim), divUp(total, max_grid_dim));
 
 			computeSpinKernel<Impl><<<grid, block, smem_size>>>(impl);
 			cudaSafeCall( cudaGetLastError() );

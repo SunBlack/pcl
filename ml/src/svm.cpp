@@ -52,15 +52,7 @@
 int libsvm_version = LIBSVM_VERSION;
 using Qfloat = float;
 using schar = signed char;
-#ifndef min
-template <class T>
-static inline T
-min(T x, T y)
-{
-  return (x < y) ? x : y;
-}
 
-#endif
 #ifndef max
 template <class T>
 static inline T
@@ -736,13 +728,13 @@ Solver::Solve(int l,
 
   int iter = 0;
   int max_iter = max(10000000, l > INT_MAX / 100 ? INT_MAX : 100 * l);
-  int counter = min(l, 1000) + 1;
+  int counter = std::min(l, 1000) + 1;
 
   while (iter < max_iter) {
     // show progress and do shrinking
 
     if (--counter == 0) {
-      counter = min(l, 1000);
+      counter = std::min(l, 1000);
 
       if (shrinking)
         do_shrinking();
@@ -1141,13 +1133,13 @@ Solver::calculate_rho()
 
     if (is_upper_bound(i)) {
       if (y[i] == -1)
-        ub = min(ub, yG);
+        ub = std::min(ub, yG);
       else
         lb = max(lb, yG);
     }
     else if (is_lower_bound(i)) {
       if (y[i] == +1)
-        ub = min(ub, yG);
+        ub = std::min(ub, yG);
       else
         lb = max(lb, yG);
     }
@@ -1396,7 +1388,7 @@ Solver_NU::calculate_rho()
       if (is_upper_bound(i))
         lb1 = max(lb1, G[i]);
       else if (is_lower_bound(i))
-        ub1 = min(ub1, G[i]);
+        ub1 = std::min(ub1, G[i]);
       else {
         ++nr_free1;
         sum_free1 += G[i];
@@ -1406,7 +1398,7 @@ Solver_NU::calculate_rho()
       if (is_upper_bound(i))
         lb2 = max(lb2, G[i]);
       else if (is_lower_bound(i))
-        ub2 = min(ub2, G[i]);
+        ub2 = std::min(ub2, G[i]);
       else {
         ++nr_free2;
         sum_free2 += G[i];
@@ -1705,11 +1697,11 @@ solve_nu_svc(const svm_problem* prob,
 
   for (int i = 0; i < l; i++)
     if (y[i] == +1) {
-      alpha[i] = min(1.0, sum_pos);
+      alpha[i] = std::min(1.0, sum_pos);
       sum_pos -= alpha[i];
     }
     else {
-      alpha[i] = min(1.0, sum_neg);
+      alpha[i] = std::min(1.0, sum_neg);
       sum_neg -= alpha[i];
     }
 
@@ -1857,7 +1849,7 @@ solve_nu_svr(const svm_problem* prob,
   double sum = C * param->nu * l / 2;
 
   for (int i = 0; i < l; i++) {
-    alpha2[i] = alpha2[i + l] = min(sum, C);
+    alpha2[i] = alpha2[i + l] = std::min(sum, C);
     sum -= alpha2[i];
 
     linear_term[i] = -prob->y[i];
@@ -2958,9 +2950,9 @@ svm_predict_probability(const svm_model* model,
     for (int i = 0; i < nr_class; i++)
       for (int j = i + 1; j < nr_class; j++) {
         pairwise_prob[i][j] =
-            min(max(sigmoid_predict(dec_values[k], model->probA[k], model->probB[k]),
-                    min_prob),
-                1 - min_prob);
+            std::min(max(sigmoid_predict(dec_values[k], model->probA[k], model->probB[k]),
+                         min_prob),
+                     1 - min_prob);
         pairwise_prob[j][i] = 1 - pairwise_prob[i][j];
         k++;
       }
@@ -3537,7 +3529,7 @@ svm_check_parameter(const svm_problem* prob, const svm_parameter* param)
       for (int j = i + 1; j < nr_class; j++) {
         int n2 = count[j];
 
-        if (param->nu * (n1 + n2) / 2 > min(n1, n2)) {
+        if (param->nu * (n1 + n2) / 2 > std::min(n1, n2)) {
           free(label);
           free(count);
           return "specified nu is infeasible";

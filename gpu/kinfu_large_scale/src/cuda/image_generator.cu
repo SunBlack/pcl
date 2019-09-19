@@ -91,7 +91,7 @@ namespace pcl
             }
 
             int br = (int)(205 * weight) + 50;
-            br = max (0, min (255, br));
+            br = max (0, std::min(255, br));
             color = make_uchar3 (br, br, br);
           }
           dst.ptr (y)[x] = color;
@@ -194,9 +194,9 @@ namespace pcl
             float cy = value.y * (1.f - colors_weight) + color.y * colors_weight;
             float cz = value.z * (1.f - colors_weight) + color.z * colors_weight;
 
-            value.x = min(255, max(0, __float2int_rn(cx)));
-            value.y = min(255, max(0, __float2int_rn(cy)));
-            value.z = min(255, max(0, __float2int_rn(cz)));
+            value.x = std::min(255, max(0, __float2int_rn(cx)));
+            value.y = std::min(255, max(0, __float2int_rn(cy)));
+            value.z = std::min(255, max(0, __float2int_rn(cz)));
           }
 
           dst.ptr(y)[x] = value;
@@ -209,7 +209,7 @@ namespace pcl
         dim3 block(32, 8);
         dim3 grid(divUp(dst.cols, block.x), divUp(dst.rows, block.y));
 
-        colors_weight = min(1.f, max(0.f, colors_weight));
+        colors_weight = std::min(1.f, max(0.f, colors_weight));
 
         paint3DViewKernel<<<grid, block>>>(colors, dst, colors_weight);
         cudaSafeCall (cudaGetLastError ());

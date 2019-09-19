@@ -267,16 +267,16 @@ namespace pcl
             int label = new_labels[i][j];                        
 
             if (edges & Edges::UP)
-               label = min(label, labels_arr[yloc-1][xloc]);
+               label = std::min(label, labels_arr[yloc-1][xloc]);
 
             if (edges & Edges::DOWN)
-               label = min(label, labels_arr[yloc+1][xloc]);
+               label = std::min(label, labels_arr[yloc+1][xloc]);
 
             if (edges & Edges::LEFT)
-               label = min(label, labels_arr[yloc][xloc-1]);
+               label = std::min(label, labels_arr[yloc][xloc-1]);
 
             if (edges & Edges::RIGHT)
-               label = min(label, labels_arr[yloc][xloc+1]);
+               label = std::min(label, labels_arr[yloc][xloc+1]);
 
             new_labels[i][j] = label;
           }
@@ -396,7 +396,7 @@ namespace pcl
         
         if (r1 != r2)
         {          
-          int mi = min(r1, r2);
+          int mi = std::min(r1, r2);
           int ma = max(r1, r2);
 
           int y = ma / comps.cols;

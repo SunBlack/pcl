@@ -200,8 +200,8 @@ namespace pcl
 					int beta_bin  = std::floor(beta  / beta_bin_size) + image_width;
 					int alpha_bin = std::floor(alpha / bin_size);
 
-					//alpha_bin = std::min(simage_cols, max(0, alpha_bin));
-					//beta_bin  = std::min(simage_rows, max(0,  beta_bin));
+					//alpha_bin = std::min(simage_cols, std::max(0, alpha_bin));
+					//beta_bin  = std::min(simage_rows, std::max(0,  beta_bin));
 
 					if (alpha_bin == image_width)  // border points
 					{

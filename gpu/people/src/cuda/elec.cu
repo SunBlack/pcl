@@ -397,7 +397,7 @@ namespace pcl
         if (r1 != r2)
         {          
           int mi = std::min(r1, r2);
-          int ma = max(r1, r2);
+          int ma = std::max(r1, r2);
 
           int y = ma / comps.cols;
           int x = ma - y * comps.cols;

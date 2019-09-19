@@ -163,7 +163,7 @@ TEST (PCL, Outofcore_Octree_Build_LOD)
   boost::filesystem::remove_all (filename_otreeB_LOD.parent_path ());
 
   Eigen::Vector3d min (0.0, 0.0, 0.0);
-  Eigen::Vector3d max (1.0, 1.0, 1.0);
+  Eigen::Vector3d std::max(1.0, 1.0, 1.0);
   
   // Build two trees using each constructor
   octree_disk treeA (min, max, .1, filename_otreeA_LOD, "ECEF");
@@ -209,7 +209,7 @@ TEST(PCL, Outofcore_Bounding_Box)
 {
 
   Eigen::Vector3d min (-32.0,-32.0,-32.0);
-  Eigen::Vector3d max (32.0, 32.0, 32.0);
+  Eigen::Vector3d std::max(32.0, 32.0, 32.0);
   
   octree_disk treeA (filename_otreeA, false);
   octree_disk treeB (filename_otreeB, false);
@@ -315,7 +315,7 @@ TEST (PCL, Outofcore_Point_Query)
 TEST (PCL, Outofcore_Ram_Tree)
 {
   Eigen::Vector3d min (0.0,0.0,0.0);
-  Eigen::Vector3d max (1.0, 1.0, 1.0);
+  Eigen::Vector3d std::max(1.0, 1.0, 1.0);
 
   const boost::filesystem::path filename_otreeA = "ram_tree/ram_tree.oct_idx";
 
@@ -441,7 +441,7 @@ TEST_F (OutofcoreTest, Outofcore_Constructors)
   //Specify the lower corner of the axis-aligned bounding box
   const Eigen::Vector3d min (-1024.0, -1024.0, -1024.0);
   //Specify the upper corner of the axis-aligned bounding box
-  const Eigen::Vector3d max (1024.0, 1024.0, 1024.0);
+  const Eigen::Vector3d std::max(1024.0, 1024.0, 1024.0);
 
   AlignedPointTVector some_points;
 
@@ -471,7 +471,7 @@ TEST_F (OutofcoreTest, Outofcore_ConstructorSafety)
   //Specify the lower corner of the axis-aligned bounding box
   const Eigen::Vector3d min (-1024, -1024, -1024);
   //Specify the upper corner of the axis-aligned bounding box
-  const Eigen::Vector3d max (1024, 1024, 1024);
+  const Eigen::Vector3d std::max(1024, 1024, 1024);
   
   int depth = 2;
   
@@ -511,7 +511,7 @@ TEST_F (OutofcoreTest, Outofcore_PointcloudConstructor)
   //Specify the lower corner of the axis-aligned bounding box
   const Eigen::Vector3d min (-1,-1,-1);
   //Specify the upper corner of the axis-aligned bounding box
-  const Eigen::Vector3d max (1024, 1024, 1024);
+  const Eigen::Vector3d std::max(1024, 1024, 1024);
 
   //create a point cloud
   pcl::PointCloud<PointT>::Ptr test_cloud (new pcl::PointCloud<PointT> ());
@@ -546,7 +546,7 @@ TEST_F (OutofcoreTest, Outofcore_PointsOnBoundaries)
   cleanUpFilesystem ();
   
   const Eigen::Vector3d min (-1,-1,-1);
-  const Eigen::Vector3d max (1,1,1);
+  const Eigen::Vector3d std::max(1,1,1);
   
   pcl::PointCloud<PointT>::Ptr cloud (new pcl::PointCloud<PointT> ());
   cloud->width = 8;
@@ -592,7 +592,7 @@ TEST_F (OutofcoreTest, Outofcore_MultiplePointClouds)
   const Eigen::Vector3d min (-1024,-1024,-1024);
   
   //Specify the upper corner of the axis-aligned bounding box
-  const Eigen::Vector3d max (1024,1024,1024);
+  const Eigen::Vector3d std::max(1024,1024,1024);
   
   //create a point cloud
   pcl::PointCloud<PointT>::Ptr test_cloud (new pcl::PointCloud<PointT> ());
@@ -655,7 +655,7 @@ TEST_F (OutofcoreTest, Outofcore_PointCloudInput_LOD)
   const Eigen::Vector3d min (-1024,-1024,-1024);
   
   //Specify the upper corner of the axis-aligned bounding box
-  const Eigen::Vector3d max (1024,1024,1024);
+  const Eigen::Vector3d std::max(1024,1024,1024);
   
   //create a point cloud
   pcl::PointCloud<PointT>::Ptr test_cloud (new pcl::PointCloud<PointT> ());
@@ -702,7 +702,7 @@ TEST_F (OutofcoreTest, PointCloud2_Constructors)
   
   //Specify the bounding box of the point clouds
   const Eigen::Vector3d min (-100.1, -100.1, -100.1);
-  const Eigen::Vector3d max (100.1, 100.1, 100.1);
+  const Eigen::Vector3d std::max(100.1, 100.1, 100.1);
   
   const boost::uint64_t depth = 2;
   
@@ -740,7 +740,7 @@ TEST_F (OutofcoreTest, PointCloud2_Insertion)
   cleanUpFilesystem ();
   
   const Eigen::Vector3d min (-11, -11, -11);
-  const Eigen::Vector3d max (11,11,11);
+  const Eigen::Vector3d std::max(11,11,11);
 
   pcl::PointCloud<pcl::PointXYZ> point_cloud;
 
@@ -773,7 +773,7 @@ TEST_F (OutofcoreTest, PointCloud2_MultiplePointCloud)
   
   //Specify the bounding box of the point clouds
   const Eigen::Vector3d min (-100.1, -100.1, -100.1);
-  const Eigen::Vector3d max (100.1, 100.1, 100.1);
+  const Eigen::Vector3d std::max(100.1, 100.1, 100.1);
 
   //create a point cloud
   pcl::PointCloud<PointT>::Ptr first_cloud (new pcl::PointCloud<PointT> ());
@@ -833,7 +833,7 @@ TEST_F (OutofcoreTest, PointCloud2_QueryBoundingBox)
 
   //Specify the bounding box of the point clouds
   const Eigen::Vector3d min (-100.1, -100.1, -100.1);
-  const Eigen::Vector3d max (100.1, 100.1, 100.1);
+  const Eigen::Vector3d std::max(100.1, 100.1, 100.1);
   
   const boost::uint64_t depth = 2;
 
@@ -885,7 +885,7 @@ TEST_F (OutofcoreTest, PointCloud2_Query)
 
   //Specify the bounding box of the point clouds
   const Eigen::Vector3d min (-100.1, -100.1, -100.1);
-  const Eigen::Vector3d max (100.1, 100.1, 100.1);
+  const Eigen::Vector3d std::max(100.1, 100.1, 100.1);
   
   const boost::uint64_t depth = 2;
   

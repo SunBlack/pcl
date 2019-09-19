@@ -67,9 +67,9 @@ namespace pcl
       float sum1 = 0;
       float sum2 = 0;
 
-      for (int cy = max (y - D / 2, 0); cy < ty; ++cy)
+      for (int cy = std::max(y - D / 2, 0); cy < ty; ++cy)
       {
-        for (int cx = max (x - D / 2, 0); cx < tx; ++cx)
+        for (int cx = std::max(x - D / 2, 0); cx < tx; ++cx)
         {
           int tmp = src.ptr (cy)[cx];
 
@@ -84,7 +84,7 @@ namespace pcl
       }
 
       int res = __float2int_rn (sum1 / sum2);
-      dst.ptr (y)[x] = max (0, std::min (res, std::numeric_limits<short>::max ()));
+      dst.ptr (y)[x] = std::max (0, std::min (res, std::numeric_limits<short>::max ()));
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -101,8 +101,8 @@ namespace pcl
 
       int center = src.ptr (2 * y)[2 * x];
 
-      int x_mi = max(0, 2*x - D/2) - 2*x;
-      int y_mi = max(0, 2*y - D/2) - 2*y;
+      int x_mi = std::max(0, 2*x - D/2) - 2*x;
+      int y_mi = std::max(0, 2*y - D/2) - 2*y;
 
       int x_ma = std::min(src.cols, 2*x -D/2+D) - 2*x;
       int y_ma = std::min(src.rows, 2*y -D/2+D) - 2*y;
@@ -144,13 +144,13 @@ namespace pcl
 
       int tx = std::min(2 * x - D / 2 + D, src.cols - 1);
       int ty = std::min(2 * y - D / 2 + D, src.rows - 1);
-      int cy = max (0, 2 * y - D / 2);
+      int cy = std::max(0, 2 * y - D / 2);
 
       int sum = 0;
       int count = 0;
 
       for (; cy < ty; ++cy)
-        for (int cx = max (0, 2 * x - D / 2); cx < tx; ++cx)
+        for (int cx = std::max(0, 2 * x - D / 2); cx < tx; ++cx)
         {
           int val = src.ptr (cy)[cx];
           if (std::abs (val - center) < 3 * sigma_color)

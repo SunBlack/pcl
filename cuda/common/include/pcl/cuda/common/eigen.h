@@ -645,9 +645,9 @@ namespace pcl
   
         // number of points in rectangular area
         //int boundsarea = (bounds.y-bounds.x) * (bounds.w-bounds.z);
-        //float skip = max (sqrtf ((float)boundsarea) / sqrt_desired_nr_neighbors, 1.0);
-        float skipX = max (sqrtf ((float)bounds.y-bounds.x) / sqrt_desired_nr_neighbors, 1.0f);
-        float skipY = max (sqrtf ((float)bounds.w-bounds.z) / sqrt_desired_nr_neighbors, 1.0f);
+        //float skip = std::max (sqrtf ((float)boundsarea) / sqrt_desired_nr_neighbors, 1.0);
+        float skipX = std::max (sqrtf ((float)bounds.y-bounds.x) / sqrt_desired_nr_neighbors, 1.0f);
+        float skipY = std::max (sqrtf ((float)bounds.w-bounds.z) / sqrt_desired_nr_neighbors, 1.0f);
         skipX = 1;
         skipY = 1;
   
@@ -727,9 +727,9 @@ namespace pcl
   
         // number of points in rectangular area
         //int boundsarea = (bounds.y-bounds.x) * (bounds.w-bounds.z);
-        //float skip = max (sqrtf ((float)boundsarea) / sqrt_desired_nr_neighbors, 1.0);
-        float skipX = max (sqrtf ((float)bounds.y-bounds.x) / sqrt_desired_nr_neighbors, 1.0f);
-        float skipY = max (sqrtf ((float)bounds.w-bounds.z) / sqrt_desired_nr_neighbors, 1.0f);
+        //float skip = std::max (sqrtf ((float)boundsarea) / sqrt_desired_nr_neighbors, 1.0);
+        float skipX = std::max (sqrtf ((float)bounds.y-bounds.x) / sqrt_desired_nr_neighbors, 1.0f);
+        float skipY = std::max (sqrtf ((float)bounds.w-bounds.z) / sqrt_desired_nr_neighbors, 1.0f);
  
         skipX = 1;
         skipY = 1;

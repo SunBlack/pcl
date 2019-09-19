@@ -58,7 +58,7 @@ namespace Metrics
       using ResultType = typename Accumulator<T>::Type;
 
       /**
-       *  Compute a distance between two vectors using (1 - (1 + sum(std::min(a_i,b_i))) / (1 + sum(max(a_i, b_i))) )
+       *  Compute a distance between two vectors using (1 - (1 + sum(std::min(a_i,b_i))) / (1 + sum(std::max(a_i, b_i))) )
        *
        *  This distance is not a valid kdtree distance, it's not dimensionwise additive
        *  and ignores worst_dist parameter.

@@ -71,8 +71,8 @@ namespace pcl
 
         float3 centroid = make_float3 (0.f, 0.f, 0.f);
         int counter = 0;
-        for (int cy = max (v - ky / 2, 0); cy < ty; cy += STEP)
-          for (int cx = max (u - kx / 2, 0); cx < tx; cx += STEP)
+        for (int cy = std::max(v - ky / 2, 0); cy < ty; cy += STEP)
+          for (int cx = std::max(u - kx / 2, 0); cx < tx; cx += STEP)
           {
             float v_x = vmap.ptr (cy)[cx];
             if (!isnan (v_x))
@@ -91,8 +91,8 @@ namespace pcl
 
         float cov[] = {0, 0, 0, 0, 0, 0};
 
-        for (int cy = max (v - ky / 2, 0); cy < ty; cy += STEP)
-          for (int cx = max (u - kx / 2, 0); cx < tx; cx += STEP)
+        for (int cy = std::max(v - ky / 2, 0); cy < ty; cy += STEP)
+          for (int cx = std::max(u - kx / 2, 0); cx < tx; cx += STEP)
           {
             float3 v;
             v.x = vmap.ptr (cy)[cx];

@@ -189,7 +189,7 @@ namespace pcl
       int g = (rgba >>  8) & 0xFF;
       int b = (rgba >> 16) & 0xFF;
 
-      int v = max (r, max (g, b));
+      int v = std::max(r, std::max(g, b));
       float h;
 
       float div_inv = 1.f / (v - std::min(r, std::min(g, b)) );

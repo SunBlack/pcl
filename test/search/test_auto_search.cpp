@@ -273,7 +273,7 @@ TEST (PCL, KdTreeWrapper_nearestKSearch)
   unsigned int counter = 0;
   for (multimap<float, int>::iterator it = sorted_brute_force_result.begin (); it != sorted_brute_force_result.end () && counter < no_of_neighbors; ++it)
   {
-    max_dist = max (max_dist, it->first);
+    max_dist = std::max(max_dist, it->first);
     ++counter;
   }
 

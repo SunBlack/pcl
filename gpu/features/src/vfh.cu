@@ -137,15 +137,15 @@ namespace pcl
                     {
                         // Normalize the f1, f2, f3, f4 features and push them in the histogram
                         h_index = std::floor (bins1 * ((f1 + M_PI) * (1.f / (2.f * M_PI))));
-                        h_index = std::min(bins1 - 1, max(0, h_index));
+                        h_index = std::min(bins1 - 1, std::max(0, h_index));
                         atomicAdd(shist_b1 + h_index, hist_incr);    
 
                         h_index = std::floor (bins2 * ((f2 + 1.f) * 0.5f));
-                        h_index = std::min(bins2 - 1, max (0, h_index));                                            
+                        h_index = std::min(bins2 - 1, std::max(0, h_index));
                         atomicAdd(shist_b2 + h_index, hist_incr);  
 
                         h_index = std::floor (bins3 * ((f3 + 1.f) * 0.5f));
-                        h_index = std::min(bins3 - 1, max (0, h_index));
+                        h_index = std::min(bins3 - 1, std::max(0, h_index));
                         atomicAdd(shist_b3 + h_index, hist_incr);
 
                         if (normalize_distances)
@@ -153,14 +153,14 @@ namespace pcl
                         else
                             h_index = __float2int_rn (f4 * 100);
 
-                        h_index = std::min(bins4 - 1, max (0, h_index));                    
+                        h_index = std::min(bins4 - 1, std::max(0, h_index));
                         atomicAdd(shist_b4 + h_index, hist_incr_size_component);
                     }
 
                     // viewpoint component
                     float alfa = ((dot(n, d_vp_p) + 1.f) * 0.5f);                    
                     h_index = std::floor (bins_vp * alfa);
-                    h_index = std::min(bins_vp - 1, max (0, h_index));
+                    h_index = std::min(bins_vp - 1, std::max(0, h_index));
                     atomicAdd(shist_vp + h_index, hist_incr_vp);
                 
                 } /* for (; idx < indices.size; idx += STRIDE)  */

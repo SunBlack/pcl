@@ -53,15 +53,6 @@ int libsvm_version = LIBSVM_VERSION;
 using Qfloat = float;
 using schar = signed char;
 
-#ifndef max
-template <class T>
-static inline T
-max(T x, T y)
-{
-  return (x > y) ? x : y;
-}
-
-#endif
 template <class T>
 static inline void
 swap(T& x, T& y)
@@ -171,7 +162,7 @@ Cache::Cache(int l_, long int size_) : l(l_), size(size_)
   head = static_cast<head_t*>(calloc(l, sizeof(head_t))); // initialized to 0
   size /= sizeof(Qfloat);
   size -= l * sizeof(head_t) / sizeof(Qfloat);
-  size = max(
+  size = std::max(
       size, 2 * static_cast<long int>(l)); // cache must be large enough for two columns
   lru_head.next = lru_head.prev = &lru_head;
 }
@@ -727,7 +718,7 @@ Solver::Solve(int l,
   // optimization step
 
   int iter = 0;
-  int max_iter = max(10000000, l > INT_MAX / 100 ? INT_MAX : 100 * l);
+  int max_iter = std::max(10000000, l > INT_MAX / 100 ? INT_MAX : 100 * l);
   int counter = std::min(l, 1000) + 1;
 
   while (iter < max_iter) {
@@ -1135,13 +1126,13 @@ Solver::calculate_rho()
       if (y[i] == -1)
         ub = std::min(ub, yG);
       else
-        lb = max(lb, yG);
+        lb = std::max(lb, yG);
     }
     else if (is_lower_bound(i)) {
       if (y[i] == +1)
         ub = std::min(ub, yG);
       else
-        lb = max(lb, yG);
+        lb = std::max(lb, yG);
     }
     else {
       ++nr_free;
@@ -1294,7 +1285,7 @@ Solver_NU::select_working_set(int& out_i, int& out_j)
     }
   }
 
-  if (max(Gmaxp + Gmaxp2, Gmaxn + Gmaxn2) < eps)
+  if (std::max(Gmaxp + Gmaxp2, Gmaxn + Gmaxn2) < eps)
     return 1;
 
   if (y[Gmin_idx] == +1)
@@ -1354,7 +1345,7 @@ Solver_NU::do_shrinking()
     }
   }
 
-  if (!unshrink && max(Gmax1 + Gmax2, Gmax3 + Gmax4) <= eps * 10) {
+  if (!unshrink && std::max(Gmax1 + Gmax2, Gmax3 + Gmax4) <= eps * 10) {
     unshrink = true;
     reconstruct_gradient();
     active_size = l;
@@ -1386,7 +1377,7 @@ Solver_NU::calculate_rho()
   for (int i = 0; i < active_size; i++) {
     if (y[i] == +1) {
       if (is_upper_bound(i))
-        lb1 = max(lb1, G[i]);
+        lb1 = std::max(lb1, G[i]);
       else if (is_lower_bound(i))
         ub1 = std::min(ub1, G[i]);
       else {
@@ -1396,7 +1387,7 @@ Solver_NU::calculate_rho()
     }
     else {
       if (is_upper_bound(i))
-        lb2 = max(lb2, G[i]);
+        lb2 = std::max(lb2, G[i]);
       else if (is_lower_bound(i))
         ub2 = std::min(ub2, G[i]);
       else {
@@ -2100,7 +2091,7 @@ sigmoid_predict(double decision_value, double A, double B)
 static void
 multiclass_probability(int k, double** r, double* p)
 {
-  const int max_iter = max(100, k);
+  const int max_iter = std::max(100, k);
   double** Q = Malloc(double*, k);
   double* Qp = Malloc(double, k);
   const double eps = 0.005 / k;
@@ -2950,8 +2941,8 @@ svm_predict_probability(const svm_model* model,
     for (int i = 0; i < nr_class; i++)
       for (int j = i + 1; j < nr_class; j++) {
         pairwise_prob[i][j] =
-            std::min(max(sigmoid_predict(dec_values[k], model->probA[k], model->probB[k]),
-                         min_prob),
+            std::min(std::max(sigmoid_predict(dec_values[k], model->probA[k], model->probB[k]),
+                              min_prob),
                      1 - min_prob);
         pairwise_prob[j][i] = 1 - pairwise_prob[i][j];
         k++;

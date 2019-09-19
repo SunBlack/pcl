@@ -92,7 +92,7 @@ public:
 
     // truncation distance
     Eigen::Vector3f voxel_size = volume_size.array() / volume_res.array().cast<float>();
-    trunc_dist_ = max ((float)min_trunc_dist, 2.1f * max (voxel_size[0], max (voxel_size[1], voxel_size[2])));
+    trunc_dist_ = std::max((float)min_trunc_dist, 2.1f * std::max(voxel_size[0], std::max(voxel_size[1], voxel_size[2])));
   };
 
   /** \brief Creates the TSDF volume on the GPU

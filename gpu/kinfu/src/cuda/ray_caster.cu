@@ -187,9 +187,9 @@ namespace pcl
 
         float time_curr = time_start_volume;
         int3 g = getVoxel (ray_start + ray_dir * time_curr);
-        g.x = max (0, std::min(g.x, VOLUME_X - 1));
-        g.y = max (0, std::min(g.y, VOLUME_Y - 1));
-        g.z = max (0, std::min(g.z, VOLUME_Z - 1));
+        g.x = std::max(0, std::min(g.x, VOLUME_X - 1));
+        g.y = std::max(0, std::min(g.y, VOLUME_Y - 1));
+        g.z = std::max(0, std::min(g.z, VOLUME_Z - 1));
 
         float tsdf = readTsdf (g.x, g.y, g.z);
 

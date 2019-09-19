@@ -196,9 +196,9 @@ namespace pcl
                 int weight_new = weight_prev + 1;
 
                 uchar4 volume_rgbw_new;
-                volume_rgbw_new.x = std::min(255, max (0, __float2int_rn (new_x)));
-                volume_rgbw_new.y = std::min(255, max (0, __float2int_rn (new_y)));
-                volume_rgbw_new.z = std::min(255, max (0, __float2int_rn (new_z)));
+                volume_rgbw_new.x = std::min(255, std::max(0, __float2int_rn (new_x)));
+                volume_rgbw_new.y = std::min(255, std::max(0, __float2int_rn (new_y)));
+                volume_rgbw_new.z = std::min(255, std::max(0, __float2int_rn (new_z)));
                 volume_rgbw_new.w = std::min(max_weight, weight_new);
 
                 *ptr = volume_rgbw_new;
@@ -226,7 +226,7 @@ namespace pcl
         cvi.t = t;
         cvi.intr = intr;
         cvi.tranc_dist = tranc_dist;
-        cvi.max_weight = std::min(max (0, max_weight), 255);
+        cvi.max_weight = std::min(std::max(0, max_weight), 255);
 
         cvi.cell_size.x = volume_size.x / VOLUME_X;
         cvi.cell_size.y = volume_size.y / VOLUME_Y;

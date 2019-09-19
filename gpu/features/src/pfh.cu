@@ -198,13 +198,13 @@ namespace pcl
                         {                            
                             // Normalize the f1, f2, f3 features and push them in the histogram
                             int find0 = std::floor( NR_SPLIT * ((f1 + PI) * (1.f / (2.f * PI))) );                            
-                            find0 = std::min(NR_SPLIT - 1, max(0, find0));
+                            find0 = std::min(NR_SPLIT - 1, std::max(0, find0));
 
                             int find1 = std::floor( NR_SPLIT * ( (f2 + 1.f) * 0.5f ) );
-                            find1 = std::min(NR_SPLIT - 1, max(0, find1));
+                            find1 = std::min(NR_SPLIT - 1, std::max(0, find1));
 
                             int find2 = std::floor( NR_SPLIT * ( (f3 + 1.f) * 0.5f ) );
-                            find2 = std::min(NR_SPLIT - 1, max(0, find2));
+                            find2 = std::min(NR_SPLIT - 1, std::max(0, find2));
 
                             int h_index = find0 + NR_SPLIT * find1 + NR_SPLIT_2 * find2;
                             atomicAdd(pfh_histogram + h_index, hist_incr);
@@ -219,13 +219,13 @@ namespace pcl
 
                                 // color ratios are in [-1, 1]
                                 int find4 = std::floor (NR_SPLIT * ((f5 + 1.f) * 0.5f));
-                                find4 = std::min(NR_SPLIT - 1, max(0, find4));
+                                find4 = std::min(NR_SPLIT - 1, std::max(0, find4));
 
                                 int find5 = std::floor (NR_SPLIT * ((f6 + 1.f) * 0.5f));
-                                find5 = std::min(NR_SPLIT - 1, max(0, find5));
+                                find5 = std::min(NR_SPLIT - 1, std::max(0, find5));
 
                                 int find6 = std::floor (NR_SPLIT * ((f7 + 1.f) * 0.5f));
-                                find6 = std::min(NR_SPLIT - 1, max(0, find6));
+                                find6 = std::min(NR_SPLIT - 1, std::max(0, find6));
 
                                 // and the colors
                                 h_index = NR_SPLIT_3 + find4 + NR_SPLIT * find5 + NR_SPLIT_2 * find6;

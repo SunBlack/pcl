@@ -316,7 +316,7 @@ void pcl::device::OctreeImpl::build()
         // 3 * sizeof(int) => +1 row        
 
         const int transaction_size = 128 / sizeof(int);
-        int cols = max<int>(points_num, transaction_size * 4);
+        int cols = std::max<int>(points_num, transaction_size * 4);
         int rows = 10 + 1; // = 13
             
         storage.create(rows, cols);

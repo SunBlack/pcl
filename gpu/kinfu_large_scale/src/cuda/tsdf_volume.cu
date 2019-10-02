@@ -177,11 +177,9 @@ namespace pcl
     {
       struct Tsdf
       {
-        enum
-        {
-          CTA_SIZE_X = 32, CTA_SIZE_Y = 8,
-          MAX_WEIGHT = 1 << 7
-        };
+        static constexpr CTA_SIZE_X = 32;
+        static constexpr CTA_SIZE_Y = 8;
+        static constexpr MAX_WEIGHT = 1 << 7;
 
         mutable PtrStep<short2> volume;
         float3 cell_size;

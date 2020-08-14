@@ -1,5 +1,8 @@
 ### ---[ PCL global CMake
 cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+if(${CMAKE_VERSION} VERSION_LESS "3.10")
+  message(DEPRECATION "You are using an old version of CMake. Upcoming PCL 1.12 requires as least CMake 3.10.")
+endif()
 
 if(POLICY CMP0074)
   # 1. Remove with 3.12.4.
